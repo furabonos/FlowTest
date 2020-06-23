@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     var naviController: UINavigationController?
-//    let navigator = Navigator()
+    let navigator = Navigator()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -24,8 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func setupRoot() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        self.naviController = UINavigationController(rootViewController: ViewController())
-        self.naviController?.navigationBar.isHidden = true
+        self.naviController = UINavigationController(rootViewController: navigator.navigate(at: .main))
+        self.naviController?.navigationBar.isHidden = false
+        self.naviController?.navigationBar.barTintColor = .yellow
+        self.naviController?.navigationBar.topItem?.title = "fdfd"
         self.window?.backgroundColor = .red
         self.window?.rootViewController = self.naviController
         self.window?.makeKeyAndVisible()

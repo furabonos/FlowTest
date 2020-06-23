@@ -31,6 +31,14 @@ class ListCell: BaseTableViewCell {
         l.text = "count"
         return l
     }()
+    
+    var viewModel: ListCellViewModel! {
+        didSet {
+            self.titleLabel.text = viewModel.title
+            self.countLabel.text = "\(viewModel.count)"
+            self.thumbnailView.image = viewModel.thumbnail
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -13,11 +13,11 @@ class ListCellViewModel {
     
     var title: String
     var count: Int
-    var thumbnail: UIImage?
+    var thumbnail: UIImage
     
-    init(content: MainPhotoModel) {
-        self.title = content.title
-        self.count = content.photoCount
-        self.thumbnail = content.thumbnails
+    init(content: Dictionary<String, AnyObject>) {
+        self.title = content["Title"] as! String
+        self.count = content["Count"] as! Int
+        self.thumbnail = content["Thumb"] as! UIImage
     }
 }

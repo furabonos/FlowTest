@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.naviController = UINavigationController(rootViewController: navigator.navigate(at: .main))
         self.naviController?.navigationBar.isHidden = false
-        self.naviController?.navigationBar.barTintColor = .yellow
-        self.naviController?.navigationBar.topItem?.title = "fdfd"
-        self.window?.backgroundColor = .red
+        self.naviController?.navigationBar.barTintColor = .white
+        self.naviController?.navigationBar.topItem?.title = "앨범"
+        self.window?.backgroundColor = .white
         self.window?.rootViewController = self.naviController
         self.window?.makeKeyAndVisible()
     }

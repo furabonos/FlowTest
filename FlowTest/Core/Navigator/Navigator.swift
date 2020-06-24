@@ -12,7 +12,7 @@ struct Navigator {
 
   enum Scene {
     case main
-//    case write
+    case detail(albumName: String)
   }
 
   func navigate(at scene: Scene) -> UIViewController {
@@ -20,9 +20,9 @@ struct Navigator {
     case .main:
       let viewController: MainViewController = MainViewController()
       return viewController
-//    case .write:
-//        let viewController: WriteViewController = WriteViewController()
-//        return viewController
+    case .detail(albumName: let albumNames):
+        let viewController: DetailViewController = DetailViewController(albumName: albumNames)
+        return viewController
     }
   }
 

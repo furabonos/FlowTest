@@ -61,7 +61,11 @@ class MainViewModel {
                             }
                             self.infoDic.updateValue(title as AnyObject, forKey: "Title")
                             self.infoDic.updateValue(photoInAlbum.count as AnyObject, forKey: "Count")
-                            self.infoDic.updateValue(photoLibraryImages.last as AnyObject, forKey: "Thumb")
+                            if title == "Recents" {
+                                self.infoDic.updateValue(photoLibraryImages.first as AnyObject, forKey: "Thumb")
+                            }else {
+                                self.infoDic.updateValue(photoLibraryImages.last as AnyObject, forKey: "Thumb")
+                            }
                             self.infoArr.append(self.infoDic)
                         }
                         

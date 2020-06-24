@@ -52,13 +52,14 @@ class ListCell: BaseTableViewCell {
     }
     
     override func setupUI() {
-        self.backgroundColor = .green
         [thumbnailView, titleLabel, countLabel].forEach { self.addSubview($0) }
     }
     
     override func setupConstraints() {
         thumbnailView.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
+//            $0.top.leading.equalToSuperview()
+            $0.centerY.equalToSuperview()
+            $0.leading.equalToSuperview()
             $0.width.height.equalTo(70)
         }
         

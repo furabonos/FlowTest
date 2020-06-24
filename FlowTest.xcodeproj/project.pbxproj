@@ -17,6 +17,7 @@
 		566C5AF324A1DA0D00FD7378 /* ListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566C5AF224A1DA0D00FD7378 /* ListCellViewModel.swift */; };
 		5692D25C24A1896900E632E2 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5692D25B24A1896900E632E2 /* Navigator.swift */; };
 		5692D25F24A189B200E632E2 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5692D25E24A189B200E632E2 /* MainViewController.swift */; };
+		56BC7AB324A313900024AA1C /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56BC7AB224A313900024AA1C /* DetailViewController.swift */; };
 		829960094034B14AA9B7C231 /* Pods_FlowTest_FlowTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 153762001D6395264FAB7738 /* Pods_FlowTest_FlowTestUITests.framework */; };
 		877EFBF624A0D88E00D75FAF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EFBF524A0D88E00D75FAF /* AppDelegate.swift */; };
 		877EFBFA24A0D88E00D75FAF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877EFBF924A0D88E00D75FAF /* ViewController.swift */; };
@@ -56,6 +57,7 @@
 		566C5AF224A1DA0D00FD7378 /* ListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCellViewModel.swift; sourceTree = "<group>"; };
 		5692D25B24A1896900E632E2 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		5692D25E24A189B200E632E2 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		56BC7AB224A313900024AA1C /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		7B174BA5D8A89EB49C563F33 /* Pods_FlowTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlowTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		877EFBF224A0D88E00D75FAF /* FlowTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		877EFBF524A0D88E00D75FAF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,11 +184,28 @@
 		5692D25D24A189A500E632E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				56BC7AB124A313450024AA1C /* Detail */,
+				56BC7AB024A3133E0024AA1C /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		56BC7AB024A3133E0024AA1C /* Main */ = {
+			isa = PBXGroup;
+			children = (
 				5692D25E24A189B200E632E2 /* MainViewController.swift */,
 				566C5AED24A1C4F200FD7378 /* MainViewModel.swift */,
 				566C5AE824A1C3A900FD7378 /* Cell */,
 			);
-			path = View;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		56BC7AB124A313450024AA1C /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				56BC7AB224A313900024AA1C /* DetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		877EFBE924A0D88E00D75FAF = {
@@ -498,6 +517,7 @@
 				877EFBFA24A0D88E00D75FAF /* ViewController.swift in Sources */,
 				5692D25C24A1896900E632E2 /* Navigator.swift in Sources */,
 				877EFC0024A0D88E00D75FAF /* FlowTest.xcdatamodeld in Sources */,
+				56BC7AB324A313900024AA1C /* DetailViewController.swift in Sources */,
 				566C5AF324A1DA0D00FD7378 /* ListCellViewModel.swift in Sources */,
 				877EFBF624A0D88E00D75FAF /* AppDelegate.swift in Sources */,
 				566C5AEA24A1C3C800FD7378 /* BaseTableViewCell.swift in Sources */,
@@ -680,7 +700,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = G6DKSMCWLJ;
 				INFOPLIST_FILE = FlowTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -699,7 +719,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9UT8US6W3V;
+				DEVELOPMENT_TEAM = G6DKSMCWLJ;
 				INFOPLIST_FILE = FlowTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 
 class BaseViewController: UIViewController {
+    
+    var navigator = Navigator()
 
     override func viewDidLoad() {
         super.viewDidLoad()

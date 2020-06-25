@@ -26,7 +26,7 @@ class DetailViewController: BaseViewController {
         var cv = UICollectionView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), collectionViewLayout: layout)
         cv.delegate = self
         cv.dataSource = self
-        cv.backgroundColor = .red
+        cv.backgroundColor = .gray
         cv.register(DetailCell.self, forCellWithReuseIdentifier: detailCell)
         return cv
     }()
@@ -45,14 +45,13 @@ class DetailViewController: BaseViewController {
     }
     
     override func setupUI() {
-        view.backgroundColor = .blue
+        self.title = self.albumName
         [collectionView].forEach { self.view.addSubview($0) }
     }
     
     override func setupConstraints() {
-        makeNavBar()
         collectionView.snp.makeConstraints {
-            $0.top.equalTo(navbar.snp.bottom)
+            $0.top.equalToSuperview()
             $0.leading.bottom.trailing.equalToSuperview()
         }
     }
@@ -64,19 +63,6 @@ class DetailViewController: BaseViewController {
     func fetchImageData() {
         viewModel.getAlbum(albumName: self.albumName) { (result) in
             self.reloadCollectionview()
-        }
-    }
-    
-    func makeNavBar() {
-        navbar.backgroundColor = .white
-        let navItem = UINavigationItem()
-        navItem.title = self.albumName
-        navItem.leftBarButtonItem = UIBarButtonItem(title: "뒤로", style: .plain, target: self, action: #selector(backBtn))
-        navbar.items = [navItem]
-        view.addSubview(navbar)
-        navbar.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
-            $0.leading.trailing.equalToSuperview()
         }
     }
     

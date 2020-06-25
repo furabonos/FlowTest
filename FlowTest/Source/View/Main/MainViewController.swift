@@ -19,8 +19,6 @@ class MainViewController: BaseViewController {
         return v
     }()
     
-    let navbar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: 0, height: 44))
-    
     let listCell = "ListCell"
     
     lazy var tableView: UITableView = {
@@ -39,31 +37,19 @@ class MainViewController: BaseViewController {
     }
     
     override func setupUI() {
+        self.title = "앨범"
         [tableView].forEach { self.view.addSubview($0) }
     }
     
     override func setupConstraints() {
-        makeNavBar()
         tableView.snp.makeConstraints {
-            $0.top.equalTo(navbar.snp.bottom)
+            $0.top.equalToSuperview()
             $0.leading.bottom.trailing.equalToSuperview()
         }
     }
     
     override func bind() {
         self.fetchData()
-    }
-    
-    func makeNavBar() {
-        navbar.backgroundColor = .white
-        let navItem = UINavigationItem()
-        navItem.title = "앨범"
-        navbar.items = [navItem]
-        view.addSubview(navbar)
-        navbar.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide.snp.topMargin)
-            $0.leading.trailing.equalToSuperview()
-        }
     }
     
     func fetchData() {

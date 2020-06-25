@@ -193,8 +193,8 @@
 		5692D25D24A189A500E632E2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				56BC7AB124A313450024AA1C /* Detail */,
 				56BC7AB024A3133E0024AA1C /* Main */,
+				56BC7AB124A313450024AA1C /* Detail */,
 			);
 			path = View;
 			sourceTree = "<group>";

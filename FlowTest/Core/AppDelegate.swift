@@ -25,9 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func setupRoot() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.naviController = UINavigationController(rootViewController: navigator.navigate(at: .main))
-        self.naviController?.navigationBar.isHidden = true
-//        self.naviController?.navigationBar.barTintColor = .white
-//        self.naviController?.navigationBar.topItem?.title = "앨범"
+        self.naviController?.navigationBar.isHidden = false
         self.window?.backgroundColor = .white
         self.window?.rootViewController = self.naviController
         self.window?.makeKeyAndVisible()

@@ -14,6 +14,9 @@ class DetailViewModel {
     
     var imgArray = Array<UIImage>()
     
+    var infoArr = Array<Dictionary<String, AnyObject>>()
+    var infoDic: [String: AnyObject] = [:]
+    
     func numberOfItemsInSection() -> Int {
         return imgArray.count
     }
@@ -23,7 +26,6 @@ class DetailViewModel {
         return CGSize(width: cellWidth, height: cellWidth)
     }
     
-//    func getAlbum(albumName: String, completion: @escaping (Bool) -> Void) {
     func getAlbum(albumName: String, completion: @escaping (Array<UIImage>) -> Void) {
         var photoLibraryImages = [UIImage]()
         var photoLibraryAssets = [PHAsset]()
@@ -62,17 +64,15 @@ class DetailViewModel {
                                    })
                                }
                            }
+                        for i in 0..<photoLibraryAssets.count {
+                            guard let fileName = photoLibraryAssets[i].value(forKey: "filename") else { return }
+                            let imgData = NSData(data: photoLibraryImages[i].jpegData(compressionQuality: 1)!)
+                            let imgSize = Double(imgData.count) / 1000.0
+                            self.infoDic.updateValue(fileName as AnyObject, forKey: "filename")
+                            self.infoDic.updateValue(imgSize as AnyObject, forKey: "filesize")
+                            self.infoArr.append(self.infoDic)
+                        }
                         completion(self.imgArray)
-                        let imgData = NSData(data: photoLibraryImages[0].jpegData(compressionQuality: 1)!)
-                        var imageSize: Int = imgData.count
-                        var mbtest = Float(Double(imageSize)/1024/1024)
-//                        print("fdsjfkdsjfkjsdfkjsdkf = \(Double(imageSize) / 1000.0) mb")
-//                        print("fdsjfkdsjfkjsdfkjsdkf = \(Double(imageSize) / 1024 / 1024) mb")
-//                        print("fffff = \(imgData.length)")
-//                        print("kfklk = \(mbtest)")
-                        print("size of image in KB: %f ", Double(imgData.count) / 1024.0)
-                        print("size of image in MB: %f ", Double(imgData.length) / 1024.0 / 1024.0)
-                        print("filename = \(photoLibraryAssets[0].value(forKey: "filename"))")
                        }
                    }
                }

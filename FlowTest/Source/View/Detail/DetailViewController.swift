@@ -104,6 +104,15 @@ extension DetailViewController: UICollectionViewDataSource {
         cell.albumView.image = viewModel.imgArray[indexPath.row]
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let fileName = self.viewModel.infoArr[indexPath.row]["filename"] else { return }
+        guard let fileSize = self.viewModel.infoArr[indexPath.row]["filesize"] else { return }
+        let alert = UIAlertController(title: "사진정보", message: "파일명: \(fileName) \n 파일크기: \(fileSize) KB", preferredStyle: .alert)
+        let okBtn = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alert.addAction(okBtn)
+        self.present(alert, animated: true)
+    }
 }
 
 extension DetailViewController: UICollectionViewDelegateFlowLayout {

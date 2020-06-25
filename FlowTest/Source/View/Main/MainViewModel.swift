@@ -52,9 +52,6 @@ class MainViewModel {
                                 imgManager.requestImage(for: photoInAlbum.object(at: i) as PHAsset , targetSize: CGSize(width: 150, height: 150), contentMode: .aspectFit, options: requestOptions, resultHandler: { image, error in
                                    if image != nil {
                                     photoLibraryImages.append(image!)
-                                    DispatchQueue.main.async {
-                                        
-                                    }
                                     photoLibraryAssets.append(photoInAlbum.object(at: i))
                                    }
                                })

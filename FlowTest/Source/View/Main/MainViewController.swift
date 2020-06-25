@@ -54,11 +54,7 @@ class MainViewController: BaseViewController {
     
     func fetchData() {
         self.viewModel.getInfo { (result) in
-            switch result {
-            case true:
-                self.reloadTableView()
-            default: break
-            }
+            self.reloadTableView()
         }
     }
     

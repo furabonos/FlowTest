@@ -25,10 +25,8 @@ class MainViewModel {
         return infoArr.count
     }
     
-//    func getInfo(completion: @escaping ([Dictionary<String, AnyObject>]) -> Void) {
-    func getInfo(completion: @escaping (Bool) -> Void) {
+    func getInfo(completion: @escaping ([Dictionary<String, AnyObject>]) -> Void) {
         var photoLibraryImages = [UIImage]()
-        var photoLibraryAssets = [PHAsset]()
         
         DispatchQueue.global(qos: .userInteractive).async {
             let fetchOptions = PHFetchOptions()
@@ -52,7 +50,6 @@ class MainViewModel {
                                 imgManager.requestImage(for: photoInAlbum.object(at: i) as PHAsset , targetSize: CGSize(width: 150, height: 150), contentMode: .aspectFit, options: requestOptions, resultHandler: { image, error in
                                    if image != nil {
                                     photoLibraryImages.append(image!)
-                                    photoLibraryAssets.append(photoInAlbum.object(at: i))
                                    }
                                })
                             }
@@ -69,7 +66,8 @@ class MainViewModel {
                     }
                 }
             }
-            completion(true)
+//            completion(true)
+            completion(self.infoArr)
             print("fjdkfjdksfjkdsfjdksfjkdsfjksd = \(self.infoArr)")
         }
     }
